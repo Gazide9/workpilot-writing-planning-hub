@@ -50,7 +50,7 @@ function PlannerPage() {
 
   async function makePlan() {
     const open = sorted.filter((t) => !t.done);
-    if (!open.length) return toast.error("Add at least one open task first.");
+    if (!open.length) { toast.error("Add at least one open task first."); return; }
     const ctrl = new AbortController();
     abortRef.current = ctrl;
     setBusy(true);

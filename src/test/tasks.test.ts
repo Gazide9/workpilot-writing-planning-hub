@@ -11,7 +11,7 @@ describe("task prioritization", () => {
   });
   it("puts nearer deadline first within same priority", () => {
     const r = sortTasks([t({ title: "late", deadline: "2026-12-01" }), t({ title: "soon", deadline: "2026-10-25" })]);
-    expect(r[0].title).toBe("soon");
+    expect(r[0]?.title).toBe("soon");
   });
   it("puts completed tasks last", () => {
     expect(sortTasks([t({ title: "done", priority: "high", done: true }), t({ title: "open", priority: "low" })])[0]?.title).toBe("open");

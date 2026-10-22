@@ -43,7 +43,7 @@ function EmailPage() {
   const abortRef = useRef<AbortController | null>(null);
 
   async function generate() {
-    if (purpose.trim().length < 3) return toast.error("Tell us what the email is about.");
+    if (purpose.trim().length < 3) { toast.error("Tell us what the email is about."); return; }
     const ctrl = new AbortController();
     abortRef.current = ctrl;
     setBusy(true);
