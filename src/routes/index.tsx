@@ -1,6 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, CalendarClock, CheckCircle2, Clock, ListTodo, Mail, MessageSquare, CalendarCheck } from "lucide-react";
-import { PageHeader } from "@/components/app-shell";
 import { daysUntil, sortTasks, useTasks } from "@/lib/tasks";
 import { PriorityBadge, DeadlineLabel } from "@/components/task-bits";
 
@@ -133,4 +132,3 @@ function Empty() {
   );
 }
 
-export { PageHeader };
