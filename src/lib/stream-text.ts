@@ -2,7 +2,7 @@
 export async function streamGenerate(
   body: unknown,
   onText: (full: string) => void,
-  signal?: AbortSignal,
+  signal: AbortSignal | null = null,
 ): Promise<string> {
   const res = await fetch("/api/generate", {
     method: "POST",

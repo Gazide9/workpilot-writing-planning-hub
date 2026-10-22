@@ -9,7 +9,7 @@ export interface Task {
   hours: number;
   done: boolean;
   createdAt: number;
-  completedAt?: number;
+  completedAt?: number | undefined;
 }
 
 const KEY = "workpilot.tasks";
@@ -31,7 +31,7 @@ export function sortTasks(tasks: Task[]): Task[] {
 export function daysUntil(deadline: string, now = new Date()): number | null {
   if (!deadline) return null;
   const today = new Date(now.getFullYear(), now.getMonth(), now.getDate()).getTime();
-  const [y, m, d] = deadline.split("-").map(Number);
+  const [y = 0, m = 1, d = 1] = deadline.split("-").map(Number);
   return Math.round((new Date(y, m - 1, d).getTime() - today) / 86400000);
 }
 
